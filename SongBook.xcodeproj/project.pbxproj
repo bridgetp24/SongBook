@@ -11,6 +11,7 @@
 		570C58EB27FF5F6C004C4186 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C58EA27FF5F6C004C4186 /* ContentView.swift */; };
 		570C58ED27FF5F6D004C4186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570C58EC27FF5F6D004C4186 /* Assets.xcassets */; };
 		570C58F027FF5F6D004C4186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */; };
+		570C58F727FF609D004C4186 /* LyricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C58F627FF609D004C4186 /* LyricView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		570C58EA27FF5F6C004C4186 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		570C58EC27FF5F6D004C4186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		570C58F627FF609D004C4186 /* LyricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricView.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		570C58E727FF5F6C004C4186 /* SongBook */ = {
 			isa = PBXGroup;
 			children = (
+				570C58F627FF609D004C4186 /* LyricView.swift */,
 				570C58E827FF5F6C004C4186 /* SongBookApp.swift */,
 				570C58EA27FF5F6C004C4186 /* ContentView.swift */,
 				570C58EC27FF5F6D004C4186 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570C58EB27FF5F6C004C4186 /* ContentView.swift in Sources */,
+				570C58F727FF609D004C4186 /* LyricView.swift in Sources */,
 				570C58E927FF5F6C004C4186 /* SongBookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

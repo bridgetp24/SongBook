@@ -11,20 +11,34 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
+                TitleBar()
                 HStack {
-                    Text("Hello, world!")
-                    Spacer()
+                    LyricView()
+                    VStack {
+                        KeyWidget()
+                        RecordWidget()
+                    }
                 }
-                
-                LyricView()
             }
-
-            
         }
-
     }
 }
-
+struct TitleBar: View {
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Title: ")
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.leading)
+                Text("Description: ")
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.leading)
+            }
+            Spacer()
+        }
+        .padding(.leading)
+    }
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

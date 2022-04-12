@@ -7,26 +7,16 @@
 
 import Foundation
 import SwiftUI
-/** playable bongos*/
+
 struct LyricView: View {
     var body: some View {
-        VStack {
+        ZStack {
+            LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
             HStack{
-                Spacer()
-                TextEditor(text: .constant("Placeholder"))
-                    .frame(width: 500.0, height: 500.0)
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
+                TextEditor(text: .constant("Add your song lyrics here!"))
+                    .padding(.all)
             }
         }
     }
 }
 
-struct Previews_LyricView_Previews: PreviewProvider {
-    static var previews: some View {
-        LyricView()
-.previewInterfaceOrientation(.landscapeLeft)
-    }
-}

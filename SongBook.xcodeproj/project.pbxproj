@@ -12,6 +12,10 @@
 		570C58ED27FF5F6D004C4186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570C58EC27FF5F6D004C4186 /* Assets.xcassets */; };
 		570C58F027FF5F6D004C4186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */; };
 		570C58F727FF609D004C4186 /* LyricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C58F627FF609D004C4186 /* LyricView.swift */; };
+		57B3E58D2805EFD60011E964 /* KeyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E58C2805EFD60011E964 /* KeyWidget.swift */; };
+		57B3E58F2805EFF90011E964 /* RecordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E58E2805EFF90011E964 /* RecordWidget.swift */; };
+		57B3E5932805FDFF0011E964 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E5922805FDFF0011E964 /* Key.swift */; };
+		57B3E5952805FECE0011E964 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E5942805FECE0011E964 /* Chord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		570C58EC27FF5F6D004C4186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		570C58F627FF609D004C4186 /* LyricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		57B3E58C2805EFD60011E964 /* KeyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWidget.swift; sourceTree = "<group>"; };
+		57B3E58E2805EFF90011E964 /* RecordWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWidget.swift; sourceTree = "<group>"; };
+		57B3E5922805FDFF0011E964 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		57B3E5942805FECE0011E964 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 		570C58E727FF5F6C004C4186 /* SongBook */ = {
 			isa = PBXGroup;
 			children = (
+				57B3E5942805FECE0011E964 /* Chord.swift */,
+				57B3E5922805FDFF0011E964 /* Key.swift */,
+				57B3E58C2805EFD60011E964 /* KeyWidget.swift */,
+				57B3E58E2805EFF90011E964 /* RecordWidget.swift */,
 				570C58F627FF609D004C4186 /* LyricView.swift */,
 				570C58E827FF5F6C004C4186 /* SongBookApp.swift */,
 				570C58EA27FF5F6C004C4186 /* ContentView.swift */,
@@ -142,7 +154,11 @@
 			files = (
 				570C58EB27FF5F6C004C4186 /* ContentView.swift in Sources */,
 				570C58F727FF609D004C4186 /* LyricView.swift in Sources */,
+				57B3E58F2805EFF90011E964 /* RecordWidget.swift in Sources */,
 				570C58E927FF5F6C004C4186 /* SongBookApp.swift in Sources */,
+				57B3E58D2805EFD60011E964 /* KeyWidget.swift in Sources */,
+				57B3E5932805FDFF0011E964 /* Key.swift in Sources */,
+				57B3E5952805FECE0011E964 /* Chord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,10 +4,12 @@
 //
 //  Created by Bridget Peterkin on 4/12/22.
 //
-
 class Key {
     var name = ""
-    init(keyName: String) {
+    var chords = [Chord?]()
+    
+    init(keyName: String,chordList: [Chord?]) {
         name = keyName
+        chords = chordList
     }
 }

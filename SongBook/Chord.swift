@@ -7,7 +7,8 @@
 
 class Chord {
     var name = ""
-    init(keyName: String) {
-        name = keyName
+    init(chordName: String) {
+        name = chordName
     }
+    //TODO: add ability to play chord allowed with MIDI file
 }

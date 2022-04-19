@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 struct KeyWidget: View {
 
-    var chordNames = ["A","B","C","D","E","F","G","Am","Bm","C#m","Dm","D#m","Em","F#m","Gm","G#m","Ab","Bb","Db","Eb","G#dim","Adim","A#dim","Bdim","C#dim","D#dim","Edim","F#dim","Gdim"]
-    var keyNames = ["Amajor","BMajor","CMajor","DMajor","EMajor","FMajor","GMajor"]
+    var chordNames = ["A","B","C","D","E","F","G","Am","Bm","C#m","Dm","D#m","Em","F#m","Gm","G#m","Ab","Bb","Db","Eb","G#dim","Adim","A#dim","Bdim","C#dim","D#dim","Edim","F#dim","Gdim","F#"]
+    var keyNames = ["AMajor","BMajor","CMajor","DMajor","EMajor","FMajor","GMajor"]
     @State var chords = [String: Chord]()
     @State var Keys = [String: Key]()
+    @State var KeyString = ""
     @State private var selectedKey = 0
     var body: some View {
         ZStack {
@@ -27,9 +28,22 @@ struct KeyWidget: View {
                                     ForEach(0..<keyNames.count, content: { index in // <2>
                                         Text(keyNames[index]) // <3>
                                     })
-                    })
+                    }).onChange(of: selectedKey) { _ in
+                        defineKeys()
+                        print("Key selected " + (keyNames[selectedKey]))
+                        var newKeyString = ""
+                        let chords = Keys[keyNames[selectedKey]]?.chords
+                        for val in 0..<((chords?.count)!) {
+                            newKeyString = newKeyString + " " + (chords?[val]?.name ?? "error")
+                        }
+                        KeyString = newKeyString
+                    }
                     // chords
-                    let currKey = Keys[keyNames[selectedKey]]
+                        Text("  I   II   III   IV   V  ")
+                        Text(KeyString)
+                        
+                        
+                    
 //                    ForEach(currKey!.chords, id: \.self) { chord in
 //                        Text(chord!.name)
 //                    }
@@ -46,14 +60,13 @@ struct KeyWidget: View {
         for chord in chordNames {
             chords[chord] = Chord(chordName: chord)
         }
-        Keys["Amajor"] = Key(keyName: "Amajor", chordList: [chords["A"],chords["Bm"],chords["C#m"],chords["D"],chords["E"],chords["F#m"],chords["G#dim"]])
-        Keys["Bmajor"] = Key(keyName: "Amajor", chordList: [chords["B"],chords["C#m"],chords["D#m"],chords["E"],chords["F#"],chords["G#m"],chords["A#dim"]])
-        Keys["Cmajor"] = Key(keyName: "Amajor", chordList: [chords["C"],chords["Dm"],chords["Em"],chords["F"],chords["G"],chords["Am"],chords["Bdim"]])
-        Keys["Dmajor"] = Key(keyName: "Amajor", chordList: [chords["D"],chords["Em"],chords["F#m"],chords["G"],chords["A"],chords["Bm"],chords["C#dim"]])
-        Keys["Emajor"] = Key(keyName: "Amajor", chordList: [chords["E"],chords["F#m"],chords["G#m"],chords["A"],chords["B"],chords["C#m"],chords["D#dim"]])
-        Keys["Fmajor"] = Key(keyName: "Amajor", chordList: [chords["F"],chords["Gm"],chords["Am"],chords["Bb"],chords["C"],chords["Dm"],chords["Edim"]])
-        Keys["Gmajor"] = Key(keyName: "Amajor", chordList: [chords["G"],chords["Am"],chords["Bm"],chords["C"],chords["D"],chords["Em"],chords["F#dim"]])
-        
+        Keys["AMajor"] = Key(keyName: "Amajor", chordList: [chords["A"],chords["Bm"],chords["C#m"],chords["D"],chords["E"],chords["F#m"],chords["G#dim"]])
+        Keys["BMajor"] = Key(keyName: "Bmajor", chordList: [chords["B"],chords["C#m"],chords["D#m"],chords["E"],chords["F#"],chords["G#m"],chords["A#dim"]])
+        Keys["CMajor"] = Key(keyName: "Cmajor", chordList: [chords["C"],chords["Dm"],chords["Em"],chords["F"],chords["G"],chords["Am"],chords["Bdim"]])
+        Keys["DMajor"] = Key(keyName: "Dmajor", chordList: [chords["D"],chords["Em"],chords["F#m"],chords["G"],chords["A"],chords["Bm"],chords["C#dim"]])
+        Keys["EMajor"] = Key(keyName: "Emajor", chordList: [chords["E"],chords["F#m"],chords["G#m"],chords["A"],chords["B"],chords["C#m"],chords["D#dim"]])
+        Keys["FMajor"] = Key(keyName: "Fmajor", chordList: [chords["F"],chords["Gm"],chords["Am"],chords["Bb"],chords["C"],chords["Dm"],chords["Edim"]])
+        Keys["GMajor"] = Key(keyName: "Gmajor", chordList: [chords["G"],chords["Am"],chords["Bm"],chords["C"],chords["D"],chords["Em"],chords["F#dim"]])
     }
 }
 

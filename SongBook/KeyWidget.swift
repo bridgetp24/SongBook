@@ -34,13 +34,18 @@ struct KeyWidget: View {
                         var newKeyString = ""
                         let chords = Keys[keyNames[selectedKey]]?.chords
                         for val in 0..<((chords?.count)!) {
-                            newKeyString = newKeyString + " " + (chords?[val]?.name ?? "error")
+                            newKeyString = newKeyString + "  " + (chords?[val]?.name ?? "error")
                         }
                         KeyString = newKeyString
                     }
                     // chords
-                        Text("  I   II   III   IV   V  ")
-                        Text(KeyString)
+                    Text("  I     II    III     IV     V     VI     VII ")
+                        .font(.title)
+                        .multilineTextAlignment(.center)
+                        
+                    Text(KeyString)
+                        .font(.title)
+                        .multilineTextAlignment(.center)
                         
                         
                     

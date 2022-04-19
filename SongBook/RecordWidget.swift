@@ -26,7 +26,8 @@ struct RecordWidget: View {
     
     let defaultMeterValue = Double(60)
     @State var meterValue = Double(0)
-    
+    @State private var selectedRecording = 0
+    @State private var recordings = ["test","test2"]
     @State var meterTimer:Timer?
     enum MeterMode {
         case record
@@ -63,6 +64,13 @@ struct RecordWidget: View {
                         Image(systemName: "play.circle")
                     })
                 }.font(.title2)
+                Picker("Recording", selection: $selectedRecording, content: {
+                                ForEach(0..<recordings.count, content: { index in // <2>
+                                    Text(recordings[index]) // <3>
+                                })
+                }).onChange(of: selectedRecording) { _ in
+
+                }
                 Spacer()
             }
             .padding(.all)
@@ -74,7 +82,6 @@ struct RecordWidget: View {
     func setup() {
         audioDocument = docDir
         audioDocument?.appendPathComponent("scratch.caf")
-        
         let audioSession = AVAudioSession.sharedInstance()
         
         do {

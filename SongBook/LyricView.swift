@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import PencilKit
 struct LyricView: View {
     var body: some View {
         ZStack {
@@ -19,4 +19,5 @@ struct LyricView: View {
         }
     }
 }
+
 

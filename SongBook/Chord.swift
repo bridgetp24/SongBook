@@ -4,11 +4,12 @@
 //
 //  Created by Bridget Peterkin on 4/12/22.
 //
-
-class Chord {
+struct Chord: Equatable{
     var name = ""
     init(chordName: String) {
         name = chordName
+        
     }
+    
     //TODO: add ability to play chord allowed with MIDI file
 }

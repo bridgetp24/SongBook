@@ -15,6 +15,9 @@ struct KeyWidget: View {
     @State var Keys = [String: Key]()
     @State var KeyString = ""
     @State private var selectedKey = 0
+    @State var selectChords: [Chord?] = []
+    @State var numChord = 0
+    var romanNums = ["I","I","II","IV","V","VI","VII"]
     var body: some View {
         ZStack {
             LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
@@ -23,6 +26,7 @@ struct KeyWidget: View {
                     Text("Key Widget")
                         .font(.title)
                         .multilineTextAlignment(.leading)
+                    
                     // chord selecter
                     Picker("Key", selection: $selectedKey, content: {
                                     ForEach(0..<keyNames.count, content: { index in // <2>
@@ -36,6 +40,7 @@ struct KeyWidget: View {
                         for val in 0..<((chords?.count)!) {
                             newKeyString = newKeyString + "  " + (chords?[val]?.name ?? "error")
                         }
+                        selectChords = chords!
                         KeyString = newKeyString
                     }
                     // chords
@@ -46,12 +51,17 @@ struct KeyWidget: View {
                     Text(KeyString)
                         .font(.title)
                         .multilineTextAlignment(.center)
-                        
-                        
-                    
-//                    ForEach(currKey!.chords, id: \.self) { chord in
-//                        Text(chord!.name)
-//                    }
+                    HStack {
+                        ForEach(selectChords, id: \.?.name) {chor in
+                            VStack {
+                                ChordButton(text: chor?.name ?? "error")
+                                    .scaleEffect()
+                                    .foregroundColor(Color.black)
+                            }
+
+                        }
+                    }
+
                     
                     // show tab check box
                     Spacer()

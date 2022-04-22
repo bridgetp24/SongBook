@@ -45,12 +45,12 @@ struct KeyWidget: View {
                     }
                     // chords
                     Text("  I     II    III     IV     V     VI     VII ")
-                        .font(.title)
+                        .font(.subheadline)
                         .multilineTextAlignment(.center)
                         
-                    Text(KeyString)
-                        .font(.title)
-                        .multilineTextAlignment(.center)
+//                    Text(KeyString)
+//                        .font(.title)
+//                        .multilineTextAlignment(.center)
                     HStack {
                         ForEach(selectChords, id: \.?.name) {chor in
                             VStack {

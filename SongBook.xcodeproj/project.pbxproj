@@ -14,6 +14,14 @@
 		570C58F727FF609D004C4186 /* LyricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C58F627FF609D004C4186 /* LyricView.swift */; };
 		575A78282811CD3C0032EA19 /* ChordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A78272811CD3C0032EA19 /* ChordButton.swift */; };
 		575A782A2811CD820032EA19 /* MIDIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A78292811CD820032EA19 /* MIDIModule.swift */; };
+		577E561928132115006F4351 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E561828132115006F4351 /* DrawingView.swift */; };
+		577E561B2813213A006F4351 /* Canvas in Resources */ = {isa = PBXBuildFile; fileRef = 577E561A2813213A006F4351 /* Canvas */; };
+		577E561D2813214F006F4351 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E561C2813214F006F4351 /* Persistence.swift */; };
+		577E562028132165006F4351 /* Drawing_Pencil_Kit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577E561E28132165006F4351 /* Drawing_Pencil_Kit.xcdatamodeld */; };
+		577E56222813219E006F4351 /* AddNewCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E56212813219E006F4351 /* AddNewCanvasView.swift */; };
+		577E562428132209006F4351 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E562328132209006F4351 /* DrawingCanvasView.swift */; };
+		577E56262813220B006F4351 /* DrawingCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E56252813220A006F4351 /* DrawingCanvasViewController.swift */; };
+		577E562828132465006F4351 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E562728132465006F4351 /* TitleView.swift */; };
 		57B3E58D2805EFD60011E964 /* KeyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E58C2805EFD60011E964 /* KeyWidget.swift */; };
 		57B3E58F2805EFF90011E964 /* RecordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E58E2805EFF90011E964 /* RecordWidget.swift */; };
 		57B3E5932805FDFF0011E964 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E5922805FDFF0011E964 /* Key.swift */; };
@@ -29,6 +37,14 @@
 		570C58F627FF609D004C4186 /* LyricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		575A78272811CD3C0032EA19 /* ChordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordButton.swift; sourceTree = "<group>"; };
 		575A78292811CD820032EA19 /* MIDIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIModule.swift; sourceTree = "<group>"; };
+		577E561828132115006F4351 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		577E561A2813213A006F4351 /* Canvas */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Canvas; sourceTree = "<group>"; };
+		577E561C2813214F006F4351 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		577E561F28132165006F4351 /* Drawing_Pencil_Kit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Drawing_Pencil_Kit.xcdatamodel; sourceTree = "<group>"; };
+		577E56212813219E006F4351 /* AddNewCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCanvasView.swift; sourceTree = "<group>"; };
+		577E562328132209006F4351 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
+		577E56252813220A006F4351 /* DrawingCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasViewController.swift; sourceTree = "<group>"; };
+		577E562728132465006F4351 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		57B3E58C2805EFD60011E964 /* KeyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWidget.swift; sourceTree = "<group>"; };
 		57B3E58E2805EFF90011E964 /* RecordWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWidget.swift; sourceTree = "<group>"; };
 		57B3E5922805FDFF0011E964 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
@@ -65,6 +81,14 @@
 		570C58E727FF5F6C004C4186 /* SongBook */ = {
 			isa = PBXGroup;
 			children = (
+				577E562728132465006F4351 /* TitleView.swift */,
+				577E56252813220A006F4351 /* DrawingCanvasViewController.swift */,
+				577E562328132209006F4351 /* DrawingCanvasView.swift */,
+				577E561A2813213A006F4351 /* Canvas */,
+				577E56212813219E006F4351 /* AddNewCanvasView.swift */,
+				577E561E28132165006F4351 /* Drawing_Pencil_Kit.xcdatamodeld */,
+				577E561C2813214F006F4351 /* Persistence.swift */,
+				577E561828132115006F4351 /* DrawingView.swift */,
 				575A78272811CD3C0032EA19 /* ChordButton.swift */,
 				575A78292811CD820032EA19 /* MIDIModule.swift */,
 				57B3E5942805FECE0011E964 /* Chord.swift */,
@@ -147,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570C58F027FF5F6D004C4186 /* Preview Assets.xcassets in Resources */,
+				577E561B2813213A006F4351 /* Canvas in Resources */,
 				570C58ED27FF5F6D004C4186 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,15 +183,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577E56262813220B006F4351 /* DrawingCanvasViewController.swift in Sources */,
+				577E561D2813214F006F4351 /* Persistence.swift in Sources */,
 				575A78282811CD3C0032EA19 /* ChordButton.swift in Sources */,
 				575A782A2811CD820032EA19 /* MIDIModule.swift in Sources */,
+				577E56222813219E006F4351 /* AddNewCanvasView.swift in Sources */,
 				570C58EB27FF5F6C004C4186 /* ContentView.swift in Sources */,
+				577E562028132165006F4351 /* Drawing_Pencil_Kit.xcdatamodeld in Sources */,
+				577E562828132465006F4351 /* TitleView.swift in Sources */,
 				570C58F727FF609D004C4186 /* LyricView.swift in Sources */,
 				57B3E58F2805EFF90011E964 /* RecordWidget.swift in Sources */,
 				570C58E927FF5F6C004C4186 /* SongBookApp.swift in Sources */,
 				57B3E58D2805EFD60011E964 /* KeyWidget.swift in Sources */,
+				577E561928132115006F4351 /* DrawingView.swift in Sources */,
 				57B3E5932805FDFF0011E964 /* Key.swift in Sources */,
 				57B3E5952805FECE0011E964 /* Chord.swift in Sources */,
+				577E562428132209006F4351 /* DrawingCanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +403,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		577E561E28132165006F4351 /* Drawing_Pencil_Kit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				577E561F28132165006F4351 /* Drawing_Pencil_Kit.xcdatamodel */,
+			);
+			currentVersion = 577E561F28132165006F4351 /* Drawing_Pencil_Kit.xcdatamodel */;
+			path = Drawing_Pencil_Kit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 570C58DD27FF5F6C004C4186 /* Project object */;
 }

@@ -12,9 +12,11 @@ struct LyricView: View {
     var body: some View {
         ZStack {
             LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
-            HStack{
-                TextEditor(text: .constant("Add your song lyrics here!"))
-                    .padding(.all)
+            VStack{
+                Image(systemName: "scribble.variable")
+                    .font(.largeTitle)
+                Text("No canvas has been selected")
+                    .font(.title)
             }
         }
     }

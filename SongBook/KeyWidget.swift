@@ -19,6 +19,8 @@ struct KeyWidget: View {
     @State var numChord = 0
     @State var selectedImage = "a"
     var romanNums = ["I","I","II","IV","V","VI","VII"]
+    var chordProgs = ["I V VI IV","VI IV I V","I IV V IV","I VI IV V","II V I VI"]
+    @State var selectedProg = "I II III"
     var body: some View {
         ZStack {
             LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
@@ -59,6 +61,16 @@ struct KeyWidget: View {
 
                         }
                     }
+                    HStack {
+                        Picker("Chord Progression", selection: $selectedProg, content: {
+                                        ForEach(0..<chordProgs.count, content: { index in // <2>
+                                            Text(chordProgs[index]) // <3>
+                                        })
+                        }).onChange(of: selectedKey) { _ in
+                            
+                        }
+                    }
+
                     Spacer()
                     
                         

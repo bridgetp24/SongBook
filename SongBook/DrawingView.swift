@@ -26,8 +26,12 @@ struct DrawingView: View {
                 }
 
                 VStack {
-                    KeyWidget()
-                    RecordWidget()
+                    ScrollView {
+                        KeyWidget()
+                        RecordWidget()
+                
+                    }
+                    
                 }
             }
 

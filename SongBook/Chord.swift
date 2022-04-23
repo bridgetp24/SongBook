@@ -6,6 +6,7 @@
 //
 struct Chord: Equatable{
     var name = ""
+    var imageName = ""
     init(chordName: String) {
         name = chordName
         

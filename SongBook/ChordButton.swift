@@ -19,8 +19,11 @@ struct ChordButton: View {
     var body: some View {
         Text(text)
             .onTouchDownGesture {
-                //midiModule.note(pitch: pitch, duration: duration, channel: channel)
+                print(text)
             }
+        Image(text)
+            .resizable()
+            .frame(width: 75.0, height: 150.0)
     }
 }
 

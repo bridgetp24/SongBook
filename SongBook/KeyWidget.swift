@@ -17,6 +17,7 @@ struct KeyWidget: View {
     @State private var selectedKey = 0
     @State var selectChords: [Chord?] = []
     @State var numChord = 0
+    @State var selectedImage = "a"
     var romanNums = ["I","I","II","IV","V","VI","VII"]
     var body: some View {
         ZStack {
@@ -43,14 +44,11 @@ struct KeyWidget: View {
                         selectChords = chords!
                         KeyString = newKeyString
                     }
-                    // chords
-                    Text("  I     II    III     IV     V     VI     VII ")
+                    // chord
+                    Text("    I                  II                  III                  IV                  V                  VI                  VII ")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                         
-//                    Text(KeyString)
-//                        .font(.title)
-//                        .multilineTextAlignment(.center)
                     HStack {
                         ForEach(selectChords, id: \.?.name) {chor in
                             VStack {
@@ -61,10 +59,10 @@ struct KeyWidget: View {
 
                         }
                     }
-
-                    
-                    // show tab check box
                     Spacer()
+                    
+                        
+                    // show tab check bo
                 }
             }
             .padding(.all)

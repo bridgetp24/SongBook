@@ -7,15 +7,14 @@
 import SwiftUI
 
 struct TitleBar: View {
+    @State var title = ""
+    @State var description = ""
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Title: ")
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.leading)
-                Text("Description: ")
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.leading)
+                TextField("Title", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Description", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                    
             }
             Spacer()
         }

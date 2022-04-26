@@ -27,8 +27,11 @@ struct RecordWidget: View {
     let defaultMeterValue = Double(60)
     @State var meterValue = Double(0)
     @State private var selectedRecording = 0
-    @State private var recordings = ["test","test2"]
+    @State private var recordings = ["recording1"]
     @State var meterTimer:Timer?
+    @State var recordingNum = 0
+    @State var unit = 0
+    @State var isFirst = true
     enum MeterMode {
         case record
         case play
@@ -42,35 +45,56 @@ struct RecordWidget: View {
                     .font(.title)
                     .multilineTextAlignment(.leading)
                 Spacer()
-                HStack(spacing: 24) {
-                    Button(action: {
-                       recording()
-                    }, label: {
-                        Text("Record")
-                        Image(systemName: "record.circle")
-                    })
-                    
-                    Button(action: {
-                        stopping()
-                    }, label: {
-                        Text("Stop")
-                        Image(systemName: "stop.circle")
-                    })
-                    
-                    Button(action: {
-                        playing()
-                    }, label: {
-                        Text("Play")
-                        Image(systemName: "play.circle")
-                    })
-                }.font(.title2)
-                Picker("Recording", selection: $selectedRecording, content: {
-                                ForEach(0..<recordings.count, content: { index in // <2>
-                                    Text(recordings[index]) // <3>
-                                })
-                }).onChange(of: selectedRecording) { _ in
-
+                if recordingNum > 0 {
+                    Text(recordings[selectedRecording])
+                    HStack(spacing: 24) {
+                        Button(action: {
+                           recording()
+                        }, label: {
+                            Text("Record")
+                            Image(systemName: "record.circle")
+                        })
+                        
+                        Button(action: {
+                            stopping()
+                        }, label: {
+                            Text("Stop")
+                            Image(systemName: "stop.circle")
+                        })
+                        
+                        Button(action: {
+                            playing()
+                        }, label: {
+                            Text("Play")
+                            Image(systemName: "play.circle")
+                        })
+                    }.font(.title2)
+                    Picker("Recording", selection: $selectedRecording, content: {
+                                    ForEach(0..<recordings.count, content: { index in // <2>
+                                        Text(recordings[index]) // <3>
+                                    })
+                    }).onChange(of: selectedRecording) { _ in
+                        // TODO make this work
+                    }.id(unit)
                 }
+                
+                Button(action: {
+                    print("making new recording")
+                    if recordingNum == 0 {
+                        recordingNum += 1
+                        setup()
+                    }else {
+                        recordingNum += 1
+                        let name = "recording" + String(recordingNum)
+                        createNewRecording(recordingName: name)
+                        recordings.append(name)
+                        print(recordings)
+                    }
+                    selectedRecording = recordings.count-1
+                    unit = unit + 1
+                }, label: {
+                    Label("new recording", systemImage: "plus")
+                })
                 Spacer()
             }
             .padding(.all)
@@ -78,10 +102,41 @@ struct RecordWidget: View {
             setup()
         }
     }
+    func createNewRecording(recordingName: String){
+        audioDocument = docDir
+        audioDocument?.appendPathComponent(recordingName + ".caf")
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        print("created document called " + recordingName)
+        
+        do {
+            try audioSession.setCategory(.playAndRecord)
+        } catch {
+            print(error)
+        }
+        
+        //STEP 4 - settings to be used for recordings - many are available - see documentation for AVAudioRecorder init...
+        let recordingSettings = [AVFormatIDKey: kAudioFormatAppleLossless,
+                               AVSampleRateKey: 44100.0, // CD Quality
+                         AVNumberOfChannelsKey: 2] as [String : Any]
+                                 
+        do {
+            try huskerRecorder = AVAudioRecorder(url: audioDocument!, settings: recordingSettings)
+            huskerRecorder?.prepareToRecord()
+            huskerRecorder?.isMeteringEnabled = true
+        } catch {
+            print("issue with recorder setup = \(error)")
+        }
+//        setupMeterTimer(start: false, mode: .record)
+        
+        //STEP 5 - setup metering for playback
+        huskerPlayer = AudioPlayerWithDelegate(location: audioDocument)
+    }
     //STEP 3 (part of creating temp file)
     func setup() {
         audioDocument = docDir
-        audioDocument?.appendPathComponent("scratch.caf")
+        audioDocument?.appendPathComponent("recording1.caf")
+
         let audioSession = AVAudioSession.sharedInstance()
         
         do {

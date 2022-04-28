@@ -47,6 +47,11 @@ struct RecordWidget: View {
                 Spacer()
                 if recordingNum > 0 {
                     Text(recordings[selectedRecording])
+//                    Button(action: {
+//                        rename()
+//                    }, label: {
+//                        Text(recordings[selectedRecording])
+//                    })
                     HStack(spacing: 24) {
                         Button(action: {
                            recording()
@@ -74,7 +79,7 @@ struct RecordWidget: View {
                                         Text(recordings[index]) // <3>
                                     })
                     }).onChange(of: selectedRecording) { _ in
-                        // TODO make this work
+                        setupNewRecording(recordingName: recordings[selectedRecording])
                     }.id(unit)
                 }
                 
@@ -86,7 +91,7 @@ struct RecordWidget: View {
                     }else {
                         recordingNum += 1
                         let name = "recording" + String(recordingNum)
-                        createNewRecording(recordingName: name)
+                        setupNewRecording(recordingName: name)
                         recordings.append(name)
                         print(recordings)
                     }
@@ -102,7 +107,7 @@ struct RecordWidget: View {
             setup()
         }
     }
-    func createNewRecording(recordingName: String){
+    func setupNewRecording(recordingName: String){
         audioDocument = docDir
         audioDocument?.appendPathComponent(recordingName + ".caf")
         let audioSession = AVAudioSession.sharedInstance()

@@ -8,22 +8,28 @@
 
 import Foundation
 import SwiftUI
+import AVKit
 
 struct ChordButton: View {
     var text: String
-//    var midiModule: MIDIModule
-//    var pitch: UInt8
-//    var duration: Double
-//    var channel: UInt8
+    @State var midiPlayer1 = AVMIDIPlayer()
     
     var body: some View {
+        ZStack {
         Text(text)
             .onTouchDownGesture {
-                print(text)
+              
             }
         Image(text)
             .resizable()
             .frame(width: 75.0, height: 150.0)
+        }.onAppear{
+            setup(text: text)
+        }
+    }
+    func setup(text: String) {
+        midiPlayer1 = try! AVMIDIPlayer(
+              contentsOf: Bundle.main.url(forResource: text, withExtension: "mid", subdirectory: "GuitarChords")!, soundBankURL: Bundle.main.url(forResource: "gs_instruments", withExtension: "dls"))
     }
 }
 

@@ -20,7 +20,8 @@ struct KeyWidget: View {
     @State var selectedImage = "a"
     var romanNums = ["I","I","II","IV","V","VI","VII"]
     var chordProgs = ["I V VI IV","VI IV I V","I IV V IV","I VI IV V","II V I VI"]
-    @State var selectedProg = "I II III"
+    @State var selectedProg = 0
+    @State var keyProg = ""
     var body: some View {
         ZStack {
             LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
@@ -36,7 +37,6 @@ struct KeyWidget: View {
                                         Text(keyNames[index]) // <3>
                                     })
                     }).onChange(of: selectedKey) { _ in
-                        defineKeys()
                         print("Key selected " + (keyNames[selectedKey]))
                         var newKeyString = ""
                         let chords = Keys[keyNames[selectedKey]]?.chords
@@ -61,25 +61,71 @@ struct KeyWidget: View {
 
                         }
                     }
+                    Spacer()
                     HStack {
                         Picker("Chord Progression", selection: $selectedProg, content: {
                                         ForEach(0..<chordProgs.count, content: { index in // <2>
                                             Text(chordProgs[index]) // <3>
                                         })
-                        }).onChange(of: selectedKey) { _ in
-                            
+                        }).onChange(of: selectedProg) { _ in
+                            let prog = getNewProg()
+                            keyProg = prog
                         }
+                        Text(keyProg)
                     }
 
                     Spacer()
                     
-                        
-                    // show tab check bo
+
                 }
             }
             .padding(.all)
 
+        }.onAppear {
+            defineKeys()
+            var newKeyString = ""
+            let chords = Keys[keyNames[selectedKey]]?.chords
+            for val in 0..<((chords?.count)!) {
+                newKeyString = newKeyString + "  " + (chords?[val]?.name ?? "error")
+            }
+            selectChords = chords!
+            KeyString = newKeyString
+            
+            let prog = getNewProg()
+            keyProg = prog
         }
+    
+    }
+    func getNewProg()-> String {
+        let chords = Keys[keyNames[selectedKey]]?.chords
+        print("new chord progression selected")
+        let progArr = chordProgs[selectedProg].components(separatedBy: " ")
+
+        var prog = ""
+        print(selectedProg)
+        print(progArr)
+        for num in progArr{
+            print(num)
+            var chordNum = ""
+            if(num == "I") {
+                chordNum = chords?[0]?.name ?? "chord not found"
+            }else if(num == "II") {
+                chordNum = chords?[1]?.name ?? "chord not found"
+            }else if(num == "III") {
+                chordNum = chords?[2]?.name ?? "chord not found"
+            }else if(num == "IV") {
+                chordNum = chords?[3]?.name ?? "chord not found"
+            }else if(num == "V") {
+                chordNum = chords?[4]?.name ?? "chord not found"
+            } else if(num == "VI"){
+                chordNum = chords?[5]?.name ?? "chord not found"
+            }else if (num == "VII") {
+                chordNum = chords?[6]?.name ?? "chord not found"
+            }
+            prog = prog + " " + chordNum
+            print(prog)
+        }
+        return prog
     }
     func defineKeys() {
         for chord in chordNames {

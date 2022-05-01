@@ -7,6 +7,7 @@
 
 import AVKit
 import SwiftUI
+
 struct RecordWidget: View {
 
     let meterBackgroundColor = Color(white: 0.95, opacity: 1.0)
@@ -20,7 +21,7 @@ struct RecordWidget: View {
     //STEP 3 - also see setup() - create temp file to store recording
     @State var docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     @State var audioDocument = URL(string: "")
-    
+    @State var newPath = URL(string: "")
     
     @State var statusMessage = "Status..."
     
@@ -47,11 +48,15 @@ struct RecordWidget: View {
                 Spacer()
                 if recordingNum > 0 {
                     Text(recordings[selectedRecording])
-//                    Button(action: {
-//                        rename()
-//                    }, label: {
-//                        Text(recordings[selectedRecording])
-//                    })
+                    Button(action: {
+                        newPath = docDir
+                        newPath?.appendPathComponent("renameRecord" + ".caf")
+                        let oldPath = huskerRecorder?.url.absoluteString
+                        let newPath = newPath?.absoluteString
+                        renameFile(oldName: oldPath!, newName:newPath!)
+                    }, label: {
+                        Text(recordings[selectedRecording])
+                    })
                     HStack(spacing: 24) {
                         Button(action: {
                            recording()
@@ -79,7 +84,7 @@ struct RecordWidget: View {
                                         Text(recordings[index]) // <3>
                                     })
                     }).onChange(of: selectedRecording) { _ in
-                        setupNewRecording(recordingName: recordings[selectedRecording])
+                        selectRecording(recordingName: recordings[selectedRecording])
                     }.id(unit)
                 }
                 
@@ -107,6 +112,16 @@ struct RecordWidget: View {
             setup()
         }
     }
+    func renameFile(oldName: String,newName: String) {
+        // Create a FileManager instance
+        let fileManager = FileManager.default
+
+        do {
+            try fileManager.moveItem(atPath: oldName, toPath: newName)
+        } catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
+    }
     func setupNewRecording(recordingName: String){
         audioDocument = docDir
         audioDocument?.appendPathComponent(recordingName + ".caf")
@@ -128,6 +143,35 @@ struct RecordWidget: View {
         do {
             try huskerRecorder = AVAudioRecorder(url: audioDocument!, settings: recordingSettings)
             huskerRecorder?.prepareToRecord()
+            huskerRecorder?.isMeteringEnabled = true
+        } catch {
+            print("issue with recorder setup = \(error)")
+        }
+//        setupMeterTimer(start: false, mode: .record)
+        
+        //STEP 5 - setup metering for playback
+        huskerPlayer = AudioPlayerWithDelegate(location: audioDocument)
+    }
+    func selectRecording(recordingName: String){
+        audioDocument = docDir
+        audioDocument?.appendPathComponent(recordingName + ".caf")
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        print("created document called " + recordingName)
+        
+        do {
+            try audioSession.setCategory(.playAndRecord)
+        } catch {
+            print(error)
+        }
+        
+        //STEP 4 - settings to be used for recordings - many are available - see documentation for AVAudioRecorder init...
+        let recordingSettings = [AVFormatIDKey: kAudioFormatAppleLossless,
+                               AVSampleRateKey: 44100.0, // CD Quality
+                         AVNumberOfChannelsKey: 2] as [String : Any]
+                                 
+        do {
+            try huskerRecorder = AVAudioRecorder(url: audioDocument!, settings: recordingSettings)
             huskerRecorder?.isMeteringEnabled = true
         } catch {
             print("issue with recorder setup = \(error)")
@@ -204,6 +248,7 @@ struct RecordWidget: View {
     }
     
     func recording() {
+        huskerRecorder?.prepareToRecord()
         setupMeterTimer(start: true, mode: .record)
         huskerRecorder?.record()
         statusMessage = "Recording..."

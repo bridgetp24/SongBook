@@ -15,21 +15,28 @@ struct ChordButton: View {
     @State var midiPlayer1 = AVMIDIPlayer()
     
     var body: some View {
-        ZStack {
+        VStack {
         Text(text)
             .onTouchDownGesture {
-              
+              playChord()
             }
         Image(text)
             .resizable()
             .frame(width: 75.0, height: 150.0)
         }.onAppear{
             setup(text: text)
+        }.onTouchDownGesture {
+            playChord()
         }
     }
     func setup(text: String) {
+        print("setting up " + text)
         midiPlayer1 = try! AVMIDIPlayer(
               contentsOf: Bundle.main.url(forResource: text, withExtension: "mid", subdirectory: "GuitarChords")!, soundBankURL: Bundle.main.url(forResource: "gs_instruments", withExtension: "dls"))
+    }
+    func playChord() {
+        midiPlayer1.currentPosition = 0.0
+        midiPlayer1.play()
     }
 }
 

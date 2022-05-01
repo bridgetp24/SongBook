@@ -12,31 +12,6 @@
 		570C58ED27FF5F6D004C4186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570C58EC27FF5F6D004C4186 /* Assets.xcassets */; };
 		570C58F027FF5F6D004C4186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */; };
 		570C58F727FF609D004C4186 /* LyricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C58F627FF609D004C4186 /* LyricView.swift */; };
-		5754D81E281B18110081BCCB /* gs_instruments.dls alias in Resources */ = {isa = PBXBuildFile; fileRef = 5754D81D281B18110081BCCB /* gs_instruments.dls alias */; };
-		5754D82B281B186B0081BCCB /* Fm.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D81F281B186A0081BCCB /* Fm.mid */; };
-		5754D82C281B186B0081BCCB /* Gm.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D820281B186B0081BCCB /* Gm.mid */; };
-		5754D82D281B186B0081BCCB /* G#m.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D821281B186B0081BCCB /* G#m.mid */; };
-		5754D82E281B186B0081BCCB /* C#m.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D822281B186B0081BCCB /* C#m.mid */; };
-		5754D82F281B186B0081BCCB /* D#m.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D823281B186B0081BCCB /* D#m.mid */; };
-		5754D830281B186B0081BCCB /* Dm.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D824281B186B0081BCCB /* Dm.mid */; };
-		5754D831281B186B0081BCCB /* A#m.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D825281B186B0081BCCB /* A#m.mid */; };
-		5754D832281B186B0081BCCB /* Bm.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D826281B186B0081BCCB /* Bm.mid */; };
-		5754D833281B186B0081BCCB /* F#m.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D827281B186B0081BCCB /* F#m.mid */; };
-		5754D834281B186B0081BCCB /* Cm.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D828281B186B0081BCCB /* Cm.mid */; };
-		5754D835281B186B0081BCCB /* Em.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D829281B186B0081BCCB /* Em.mid */; };
-		5754D836281B186B0081BCCB /* Am.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D82A281B186B0081BCCB /* Am.mid */; };
-		5754D843281B18760081BCCB /* A#:Bb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D837281B18750081BCCB /* A#:Bb.mid */; };
-		5754D844281B18760081BCCB /* E.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D838281B18750081BCCB /* E.mid */; };
-		5754D845281B18760081BCCB /* D#:Eb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D839281B18750081BCCB /* D#:Eb.mid */; };
-		5754D846281B18760081BCCB /* B.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D83A281B18750081BCCB /* B.mid */; };
-		5754D847281B18760081BCCB /* AChord.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D83B281B18750081BCCB /* AChord.mid */; };
-		5754D848281B18760081BCCB /* F#:Gb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D83C281B18750081BCCB /* F#:Gb.mid */; };
-		5754D849281B18760081BCCB /* C#:Db.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D83D281B18750081BCCB /* C#:Db.mid */; };
-		5754D84A281B18760081BCCB /* G#:Ab.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D83E281B18760081BCCB /* G#:Ab.mid */; };
-		5754D84B281B18760081BCCB /* F.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D83F281B18760081BCCB /* F.mid */; };
-		5754D84C281B18760081BCCB /* D.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D840281B18760081BCCB /* D.mid */; };
-		5754D84D281B18760081BCCB /* G.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D841281B18760081BCCB /* G.mid */; };
-		5754D84E281B18760081BCCB /* C.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5754D842281B18760081BCCB /* C.mid */; };
 		575A78282811CD3C0032EA19 /* ChordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A78272811CD3C0032EA19 /* ChordButton.swift */; };
 		575A782A2811CD820032EA19 /* MIDIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A78292811CD820032EA19 /* MIDIModule.swift */; };
 		577E561928132115006F4351 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E561828132115006F4351 /* DrawingView.swift */; };
@@ -51,6 +26,8 @@
 		57B3E58F2805EFF90011E964 /* RecordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E58E2805EFF90011E964 /* RecordWidget.swift */; };
 		57B3E5932805FDFF0011E964 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E5922805FDFF0011E964 /* Key.swift */; };
 		57B3E5952805FECE0011E964 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B3E5942805FECE0011E964 /* Chord.swift */; };
+		57C6FD41281F22D900BC7122 /* GuitarChords in Resources */ = {isa = PBXBuildFile; fileRef = 57C6FD40281F22D900BC7122 /* GuitarChords */; };
+		57C6FD43281F238F00BC7122 /* gs_instruments.dls in Resources */ = {isa = PBXBuildFile; fileRef = 57C6FD42281F238F00BC7122 /* gs_instruments.dls */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,31 +37,6 @@
 		570C58EC27FF5F6D004C4186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		570C58F627FF609D004C4186 /* LyricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricView.swift; sourceTree = "<group>"; tabWidth = 4; };
-		5754D81D281B18110081BCCB /* gs_instruments.dls alias */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gs_instruments.dls alias"; sourceTree = "<group>"; };
-		5754D81F281B186A0081BCCB /* Fm.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Fm.mid; sourceTree = "<group>"; };
-		5754D820281B186B0081BCCB /* Gm.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Gm.mid; sourceTree = "<group>"; };
-		5754D821281B186B0081BCCB /* G#m.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "G#m.mid"; sourceTree = "<group>"; };
-		5754D822281B186B0081BCCB /* C#m.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "C#m.mid"; sourceTree = "<group>"; };
-		5754D823281B186B0081BCCB /* D#m.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "D#m.mid"; sourceTree = "<group>"; };
-		5754D824281B186B0081BCCB /* Dm.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Dm.mid; sourceTree = "<group>"; };
-		5754D825281B186B0081BCCB /* A#m.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "A#m.mid"; sourceTree = "<group>"; };
-		5754D826281B186B0081BCCB /* Bm.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Bm.mid; sourceTree = "<group>"; };
-		5754D827281B186B0081BCCB /* F#m.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "F#m.mid"; sourceTree = "<group>"; };
-		5754D828281B186B0081BCCB /* Cm.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Cm.mid; sourceTree = "<group>"; };
-		5754D829281B186B0081BCCB /* Em.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Em.mid; sourceTree = "<group>"; };
-		5754D82A281B186B0081BCCB /* Am.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Am.mid; sourceTree = "<group>"; };
-		5754D837281B18750081BCCB /* A#:Bb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "A#:Bb.mid"; sourceTree = "<group>"; };
-		5754D838281B18750081BCCB /* E.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = E.mid; sourceTree = "<group>"; };
-		5754D839281B18750081BCCB /* D#:Eb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "D#:Eb.mid"; sourceTree = "<group>"; };
-		5754D83A281B18750081BCCB /* B.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = B.mid; sourceTree = "<group>"; };
-		5754D83B281B18750081BCCB /* AChord.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = AChord.mid; sourceTree = "<group>"; };
-		5754D83C281B18750081BCCB /* F#:Gb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "F#:Gb.mid"; sourceTree = "<group>"; };
-		5754D83D281B18750081BCCB /* C#:Db.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "C#:Db.mid"; sourceTree = "<group>"; };
-		5754D83E281B18760081BCCB /* G#:Ab.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "G#:Ab.mid"; sourceTree = "<group>"; };
-		5754D83F281B18760081BCCB /* F.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = F.mid; sourceTree = "<group>"; };
-		5754D840281B18760081BCCB /* D.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = D.mid; sourceTree = "<group>"; };
-		5754D841281B18760081BCCB /* G.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = G.mid; sourceTree = "<group>"; };
-		5754D842281B18760081BCCB /* C.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = C.mid; sourceTree = "<group>"; };
 		575A78272811CD3C0032EA19 /* ChordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordButton.swift; sourceTree = "<group>"; };
 		575A78292811CD820032EA19 /* MIDIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIModule.swift; sourceTree = "<group>"; };
 		577E561828132115006F4351 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
@@ -100,6 +52,8 @@
 		57B3E58E2805EFF90011E964 /* RecordWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWidget.swift; sourceTree = "<group>"; };
 		57B3E5922805FDFF0011E964 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		57B3E5942805FECE0011E964 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
+		57C6FD40281F22D900BC7122 /* GuitarChords */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GuitarChords; sourceTree = "<group>"; };
+		57C6FD42281F238F00BC7122 /* gs_instruments.dls */ = {isa = PBXFileReference; lastKnownFileType = file; path = gs_instruments.dls; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +86,8 @@
 		570C58E727FF5F6C004C4186 /* SongBook */ = {
 			isa = PBXGroup;
 			children = (
-				5754D81D281B18110081BCCB /* gs_instruments.dls alias */,
-				5754D7E7281B13AF0081BCCB /* GuitarChords */,
+				57C6FD42281F238F00BC7122 /* gs_instruments.dls */,
+				57C6FD40281F22D900BC7122 /* GuitarChords */,
 				5783C1F5281865CB0047C8AE /* Info.plist */,
 				577E562728132465006F4351 /* TitleView.swift */,
 				577E56252813220A006F4351 /* DrawingCanvasViewController.swift */,
@@ -164,37 +118,6 @@
 				570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5754D7E7281B13AF0081BCCB /* GuitarChords */ = {
-			isa = PBXGroup;
-			children = (
-				5754D837281B18750081BCCB /* A#:Bb.mid */,
-				5754D83B281B18750081BCCB /* AChord.mid */,
-				5754D83A281B18750081BCCB /* B.mid */,
-				5754D842281B18760081BCCB /* C.mid */,
-				5754D83D281B18750081BCCB /* C#:Db.mid */,
-				5754D840281B18760081BCCB /* D.mid */,
-				5754D839281B18750081BCCB /* D#:Eb.mid */,
-				5754D838281B18750081BCCB /* E.mid */,
-				5754D83F281B18760081BCCB /* F.mid */,
-				5754D83C281B18750081BCCB /* F#:Gb.mid */,
-				5754D826281B186B0081BCCB /* Bm.mid */,
-				5754D841281B18760081BCCB /* G.mid */,
-				5754D822281B186B0081BCCB /* C#m.mid */,
-				5754D82A281B186B0081BCCB /* Am.mid */,
-				5754D825281B186B0081BCCB /* A#m.mid */,
-				5754D824281B186B0081BCCB /* Dm.mid */,
-				5754D823281B186B0081BCCB /* D#m.mid */,
-				5754D827281B186B0081BCCB /* F#m.mid */,
-				5754D820281B186B0081BCCB /* Gm.mid */,
-				5754D821281B186B0081BCCB /* G#m.mid */,
-				5754D828281B186B0081BCCB /* Cm.mid */,
-				5754D829281B186B0081BCCB /* Em.mid */,
-				5754D81F281B186A0081BCCB /* Fm.mid */,
-				5754D83E281B18760081BCCB /* G#:Ab.mid */,
-			);
-			path = GuitarChords;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,34 +178,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5754D84E281B18760081BCCB /* C.mid in Resources */,
-				5754D834281B186B0081BCCB /* Cm.mid in Resources */,
-				5754D843281B18760081BCCB /* A#:Bb.mid in Resources */,
-				5754D82C281B186B0081BCCB /* Gm.mid in Resources */,
-				5754D833281B186B0081BCCB /* F#m.mid in Resources */,
-				5754D849281B18760081BCCB /* C#:Db.mid in Resources */,
-				5754D832281B186B0081BCCB /* Bm.mid in Resources */,
-				5754D82B281B186B0081BCCB /* Fm.mid in Resources */,
-				5754D844281B18760081BCCB /* E.mid in Resources */,
-				5754D831281B186B0081BCCB /* A#m.mid in Resources */,
-				5754D84D281B18760081BCCB /* G.mid in Resources */,
-				5754D82E281B186B0081BCCB /* C#m.mid in Resources */,
-				5754D847281B18760081BCCB /* AChord.mid in Resources */,
-				5754D81E281B18110081BCCB /* gs_instruments.dls alias in Resources */,
+				57C6FD41281F22D900BC7122 /* GuitarChords in Resources */,
+				57C6FD43281F238F00BC7122 /* gs_instruments.dls in Resources */,
 				570C58F027FF5F6D004C4186 /* Preview Assets.xcassets in Resources */,
-				5754D84C281B18760081BCCB /* D.mid in Resources */,
-				5754D845281B18760081BCCB /* D#:Eb.mid in Resources */,
-				5754D830281B186B0081BCCB /* Dm.mid in Resources */,
-				5754D835281B186B0081BCCB /* Em.mid in Resources */,
-				5754D84A281B18760081BCCB /* G#:Ab.mid in Resources */,
-				5754D84B281B18760081BCCB /* F.mid in Resources */,
 				577E561B2813213A006F4351 /* Canvas in Resources */,
-				5754D846281B18760081BCCB /* B.mid in Resources */,
-				5754D836281B186B0081BCCB /* Am.mid in Resources */,
-				5754D82F281B186B0081BCCB /* D#m.mid in Resources */,
-				5754D848281B18760081BCCB /* F#:Gb.mid in Resources */,
 				570C58ED27FF5F6D004C4186 /* Assets.xcassets in Resources */,
-				5754D82D281B186B0081BCCB /* G#m.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +343,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SongBook/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = YES;
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This is for the recording widget tool";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,7 +378,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SongBook/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = YES;
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This is for the recording widget tool";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

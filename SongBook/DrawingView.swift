@@ -29,9 +29,7 @@ struct DrawingView: View {
                     ScrollView {
                         KeyWidget()
                         RecordWidget()
-                
                     }
-                    
                 }
             }
 

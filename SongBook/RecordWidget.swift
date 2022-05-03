@@ -9,7 +9,8 @@ import AVKit
 import SwiftUI
 
 struct RecordWidget: View {
-
+    @Environment(\.managedObjectContext) private var viewContext
+    
     let meterBackgroundColor = Color(white: 0.95, opacity: 1.0)
     //STEP 1 - create an instance of an AVAudioRecorder
     @State var huskerRecorder: AVAudioRecorder?
@@ -28,11 +29,13 @@ struct RecordWidget: View {
     let defaultMeterValue = Double(60)
     @State var meterValue = Double(0)
     @State private var selectedRecording = 0
-    @State private var recordings = ["recording1"]
+    @State private var recordings = ["recording1.caf"]
     @State var meterTimer:Timer?
     @State var recordingNum = 0
     @State var unit = 0
     @State var isFirst = true
+    var title: String
+
     enum MeterMode {
         case record
         case play
@@ -95,7 +98,7 @@ struct RecordWidget: View {
                         setup()
                     }else {
                         recordingNum += 1
-                        let name = "recording" + String(recordingNum)
+                        let name = "recording" + String(recordingNum) + ".caf"
                         setupNewRecording(recordingName: name)
                         recordings.append(name)
                         print(recordings)
@@ -110,6 +113,19 @@ struct RecordWidget: View {
             .padding(.all)
         }.onAppear() {
             setup()
+            let savedRecordings = getSavedRecordings()
+            
+            if savedRecordings != nil{
+                let lenSaved = savedRecordings?.count
+                let songRecordings = [String]()
+//                ForEach(0..<lenSaved ?? 0!, content: { index in // <2>
+//                    if savedRecordings[index].contains(title) {
+//                        songRecordings.append(savedRecordings[index])
+//                    }
+//                })
+                recordings=savedRecordings!
+                isFirst = false
+            }
         }
     }
     func renameFile(oldName: String,newName: String) {
@@ -122,9 +138,19 @@ struct RecordWidget: View {
             print("Ooops! Something went wrong: \(error)")
         }
     }
+    func getSavedRecordings() -> [String]?{
+        let FileManager = FileManager.default
+        
+        // full path to documents directory
+        let docs = FileManager.urls(for: . documentDirectory, in:.userDomainMask)[0].path
+    
+        // list all contents and return as string or nil
+        return try? FileManager.contentsOfDirectory(atPath: docs)
+        
+    }
     func setupNewRecording(recordingName: String){
         audioDocument = docDir
-        audioDocument?.appendPathComponent(recordingName + ".caf")
+        audioDocument?.appendPathComponent(title + "." + recordingName)
         let audioSession = AVAudioSession.sharedInstance()
         
         print("created document called " + recordingName)
@@ -154,10 +180,10 @@ struct RecordWidget: View {
     }
     func selectRecording(recordingName: String){
         audioDocument = docDir
-        audioDocument?.appendPathComponent(recordingName + ".caf")
+        audioDocument?.appendPathComponent(recordingName)
         let audioSession = AVAudioSession.sharedInstance()
         
-        print("created document called " + recordingName)
+        print("selected document called " + recordingName)
         
         do {
             try audioSession.setCategory(.playAndRecord)
@@ -232,7 +258,7 @@ struct RecordWidget: View {
                     let peak1 = huskerPlayer?.player?.peakPower(forChannel: 0)
                     let ave2 = huskerPlayer?.player?.averagePower(forChannel: 1)
                     let peak2 = huskerPlayer?.player?.peakPower(forChannel: 1)
-                    print("\(ave1!) | \(ave2!) : \(peak1!) | \(peak2!)")
+                    //print("\(ave1!) | \(ave2!) : \(peak1!) | \(peak2!)")
                     meterValue = Double(ave1!) * -1.0
                     
                     if huskerPlayer?.isPlaying == false {
@@ -256,6 +282,7 @@ struct RecordWidget: View {
     
     func stopping() {
         huskerRecorder?.stop()
+        huskerPlayer?.stop()
         statusMessage = "Stopping..."
         meterTimer!.invalidate()
         meterValue = defaultMeterValue

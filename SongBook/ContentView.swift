@@ -53,7 +53,7 @@ struct ContentView: View {
                     LyricView()
                     VStack {
                         KeyWidget()
-                        RecordWidget()
+                        RecordWidget(title: "untitled")
                     }
                 }
             }

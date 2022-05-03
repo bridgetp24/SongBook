@@ -28,7 +28,7 @@ struct DrawingView: View {
                 VStack {
                     ScrollView {
                         KeyWidget()
-                        RecordWidget()
+                        RecordWidget(title: title ?? "untitled")
                     }
                 }
             }

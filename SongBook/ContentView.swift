@@ -15,6 +15,7 @@ struct ContentView: View {
     
     @State private var showSheet = false
     var body: some View {
+        // navigation view to select current song
         NavigationView{
             VStack{
                 List {
@@ -45,7 +46,7 @@ struct ContentView: View {
                 
                 
             }
-        
+            // default content if no song is selected
             ZStack {
                 VStack{
                     HStack {
@@ -55,7 +56,7 @@ struct ContentView: View {
                             Image("leatherBackground")
                                 .resizable()
                         )
-
+                        // widgets 
                         VStack {
                             ScrollView {
                                 KeyWidget()

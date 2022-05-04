@@ -9,6 +9,7 @@
 import AVKit
 import SwiftUI
 import AVFoundation
+/** DrumPad widget to play different drum sound via DrumButtons*/
 struct DrumPad: View {
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -27,6 +28,7 @@ struct DrumPad: View {
         ZStack {
             LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
             VStack() {
+                // setup drum buttons
                 Text("Drum Pad")
                     .font(.title)
                     .multilineTextAlignment(.leading)

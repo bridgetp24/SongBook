@@ -4,6 +4,7 @@
 //
 //  Created by Bridget Peterkin on 4/12/22.
 //
+/** Struct to represent a chord*/
 struct Chord: Equatable{
     var name = ""
     var imageName = ""
@@ -11,6 +12,4 @@ struct Chord: Equatable{
         name = chordName
         
     }
-    
-    //TODO: add ability to play chord allowed with MIDI file
 }

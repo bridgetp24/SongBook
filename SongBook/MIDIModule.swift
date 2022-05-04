@@ -2,8 +2,6 @@
 //  MUSC291Q_MIDIModule.swift
 //
 //  Created by Brian Moore on 3/4/22.
-//  Based on update 3/22/21
-//  Modified by Daniel Riedel on 3/27/22
 
 import Foundation
 import AVKit

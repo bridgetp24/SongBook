@@ -4,6 +4,8 @@
 //
 //  Created by Bridget Peterkin on 4/12/22.
 //
+
+/** musical key class representation*/
 class Key {
     var name = ""
     var chords = [Chord?]()

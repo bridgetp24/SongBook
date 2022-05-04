@@ -110,16 +110,7 @@
 		570C58E727FF5F6C004C4186 /* SongBook */ = {
 			isa = PBXGroup;
 			children = (
-				578660B92822225D0055ABA4 /* Triangle.mp3 */,
-				578660A9282220F00055ABA4 /* Bass.mp3 */,
-				578660AB282220F00055ABA4 /* Crash-Cymbal.mp3 */,
-				578660B0282220F00055ABA4 /* Drum-Stick.mp3 */,
-				578660AA282220F00055ABA4 /* Floor-Tom.mp3 */,
-				578660AF282220F00055ABA4 /* Hi-Hat.mp3 */,
-				578660AC282220F00055ABA4 /* Medium-Tom.mp3 */,
-				578660AD282220F00055ABA4 /* Small-Tom.mp3 */,
-				578660AE282220F00055ABA4 /* Snare.mp3 */,
-				578660A32822131F0055ABA4 /* hit.wav */,
+				57FE9D5928230CCC003D86AA /* DrumAudio */,
 				57C6FD42281F238F00BC7122 /* gs_instruments.dls */,
 				57C6FD40281F22D900BC7122 /* GuitarChords */,
 				5783C1F5281865CB0047C8AE /* Info.plist */,
@@ -154,6 +145,23 @@
 				570C58EF27FF5F6D004C4186 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57FE9D5928230CCC003D86AA /* DrumAudio */ = {
+			isa = PBXGroup;
+			children = (
+				578660AB282220F00055ABA4 /* Crash-Cymbal.mp3 */,
+				578660B0282220F00055ABA4 /* Drum-Stick.mp3 */,
+				578660A9282220F00055ABA4 /* Bass.mp3 */,
+				578660AF282220F00055ABA4 /* Hi-Hat.mp3 */,
+				578660AC282220F00055ABA4 /* Medium-Tom.mp3 */,
+				578660AD282220F00055ABA4 /* Small-Tom.mp3 */,
+				578660AA282220F00055ABA4 /* Floor-Tom.mp3 */,
+				578660A32822131F0055ABA4 /* hit.wav */,
+				578660AE282220F00055ABA4 /* Snare.mp3 */,
+				578660B92822225D0055ABA4 /* Triangle.mp3 */,
+			);
+			path = DrumAudio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -445,7 +453,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -2,9 +2,7 @@
 //  ChordButton.swift
 //  SongBook
 //
-//  Created by Daniel Riedel on 3/29/22.
-//  Modified by Bridget Peterkin on 4/21/22
-//
+// Created by Bridget Peterkin on 4/21/22
 
 import Foundation
 import SwiftUI
@@ -16,10 +14,12 @@ struct ChordButton: View {
     
     var body: some View {
         VStack {
+        // chord name
         Text(text)
             .onTouchDownGesture {
               playChord()
             }
+        // Chord image
         Image(text)
             .resizable()
             .frame(width: 75.0, height: 150.0)

@@ -5,6 +5,7 @@
 //  Created by Bridget Peterkin on 4/7/22.
 //
 
+/** Default view if no canvas is selected */
 import Foundation
 import SwiftUI
 import PencilKit

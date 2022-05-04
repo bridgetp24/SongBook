@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+
+/** Widget to display keys and tab for a selected key. It also features buttons to play chord audio and a selection for different chord progressions.*/
 struct KeyWidget: View {
 
     var chordNames = ["A","B","C","D","E","F","G","Am","Bm","C#m","Dm","D#m","Em","F#m","Gm","G#m","Ab","Bb","Db","Eb","G#dim","Adim","A#dim","Bdim","C#dim","D#dim","Edim","F#dim","Gdim","F#"]
@@ -63,6 +65,7 @@ struct KeyWidget: View {
                         }
                     }
                     Spacer()
+                    // chord progression selecter
                     HStack {
                         Picker("Chord Progression", selection: $selectedProg, content: {
                                         ForEach(0..<chordProgs.count, content: { index in // <2>

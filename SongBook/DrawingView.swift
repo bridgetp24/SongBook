@@ -16,8 +16,8 @@ struct DrawingView: View {
     var body: some View {
         VStack{
             HStack {
+                // canvas
                 ZStack {
-                    //LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
                     DrawingCanvasView(data: data ?? Data(), id: id ?? UUID())
                         .environment(\.managedObjectContext, viewContext)
                         .navigationBarTitle(title ?? "Untitled",displayMode: .inline)
@@ -27,7 +27,7 @@ struct DrawingView: View {
                         .resizable()
                      
                 )
-
+                // widgets
                 VStack {
                     ScrollView {
                         KeyWidget()

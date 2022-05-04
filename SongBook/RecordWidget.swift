@@ -7,7 +7,7 @@
 
 import AVKit
 import SwiftUI
-
+/** Widget to record and play back audio for a particular selected song */
 struct RecordWidget: View {
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -34,6 +34,7 @@ struct RecordWidget: View {
     @State var recordingNum = 0
     @State var unit = 0
     @State var isFirst = true
+    
     var title: String
 
     enum MeterMode {
@@ -49,17 +50,9 @@ struct RecordWidget: View {
                     .font(.title)
                     .multilineTextAlignment(.leading)
                 Spacer()
+                // if recording exists then show the record/pause/play options
                 if recordingNum > 0 {
                     Text(recordings[selectedRecording])
-//                    Button(action: {
-//                        newPath = docDir
-//                        newPath?.appendPathComponent("renameRecord" + ".caf")
-//                        let oldPath = huskerRecorder?.url.absoluteString
-//                        let newPath = newPath?.absoluteString
-//                        renameFile(oldName: oldPath!, newName:newPath!)
-//                    }, label: {
-//                        Text(recordings[selectedRecording])
-//                    })
                     HStack(spacing: 24) {
                         Button(action: {
                            recording()
@@ -176,7 +169,6 @@ struct RecordWidget: View {
         } catch {
             print("issue with recorder setup = \(error)")
         }
-//        setupMeterTimer(start: false, mode: .record)
         
         //STEP 5 - setup metering for playback
         huskerPlayer = AudioPlayerWithDelegate(location: audioDocument)
@@ -205,7 +197,6 @@ struct RecordWidget: View {
         } catch {
             print("issue with recorder setup = \(error)")
         }
-//        setupMeterTimer(start: false, mode: .record)
         
         //STEP 5 - setup metering for playback
         huskerPlayer = AudioPlayerWithDelegate(location: audioDocument)

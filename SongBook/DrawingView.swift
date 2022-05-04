@@ -15,22 +15,30 @@ struct DrawingView: View {
     @State var title:String?
     var body: some View {
         VStack{
-            TitleBar()
             HStack {
                 ZStack {
-                    LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
+                    //LinearGradient(colors: [Color("BackColor"),Color("BackColor")],startPoint: .top, endPoint: .bottom)
                     DrawingCanvasView(data: data ?? Data(), id: id ?? UUID())
                         .environment(\.managedObjectContext, viewContext)
                         .navigationBarTitle(title ?? "Untitled",displayMode: .inline)
                         .padding(.all)
-                }
+                }.background(
+                    Image("leatherBackground")
+                        .resizable()
+                     
+                )
 
                 VStack {
                     ScrollView {
                         KeyWidget()
                         RecordWidget(title: title ?? "untitled")
-                    }
-                }
+                        DrumPad()
+                    }.padding(.all)
+                }.background(
+                    Image("leatherBackground")
+                        .resizable()
+                     
+                )
             }
 
         }

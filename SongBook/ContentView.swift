@@ -46,20 +46,32 @@ struct ContentView: View {
                 
             }
         
-        ZStack {
-            VStack {
-                TitleBar()
-                HStack {
-                    LyricView()
-                    VStack {
-                        KeyWidget()
-                        RecordWidget(title: "untitled")
+            ZStack {
+                VStack{
+                    HStack {
+                        ZStack {
+                            LyricView()
+                        }.background(
+                            Image("leatherBackground")
+                                .resizable()
+                        )
+
+                        VStack {
+                            ScrollView {
+                                KeyWidget()
+                                RecordWidget(title: "untitled")
+                                DrumPad()
+                            }.padding(.all)
+                        }.background(
+                            Image("leatherBackground")
+                                .resizable()
+                             
+                        )
                     }
+
                 }
             }
-        }
-        }
-        .navigationViewStyle(DoubleColumnNavigationViewStyle())
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
     func deleteItem(at offset: IndexSet) {
         for index in offset{

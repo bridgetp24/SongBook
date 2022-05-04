@@ -51,15 +51,15 @@ struct RecordWidget: View {
                 Spacer()
                 if recordingNum > 0 {
                     Text(recordings[selectedRecording])
-                    Button(action: {
-                        newPath = docDir
-                        newPath?.appendPathComponent("renameRecord" + ".caf")
-                        let oldPath = huskerRecorder?.url.absoluteString
-                        let newPath = newPath?.absoluteString
-                        renameFile(oldName: oldPath!, newName:newPath!)
-                    }, label: {
-                        Text(recordings[selectedRecording])
-                    })
+//                    Button(action: {
+//                        newPath = docDir
+//                        newPath?.appendPathComponent("renameRecord" + ".caf")
+//                        let oldPath = huskerRecorder?.url.absoluteString
+//                        let newPath = newPath?.absoluteString
+//                        renameFile(oldName: oldPath!, newName:newPath!)
+//                    }, label: {
+//                        Text(recordings[selectedRecording])
+//                    })
                     HStack(spacing: 24) {
                         Button(action: {
                            recording()
@@ -97,6 +97,7 @@ struct RecordWidget: View {
                         recordingNum += 1
                         setup()
                     }else {
+                        
                         recordingNum += 1
                         let name = "recording" + String(recordingNum) + ".caf"
                         setupNewRecording(recordingName: name)
@@ -115,16 +116,18 @@ struct RecordWidget: View {
             setup()
             let savedRecordings = getSavedRecordings()
             
-            if savedRecordings != nil{
-                let lenSaved = savedRecordings?.count
-                let songRecordings = [String]()
-//                ForEach(0..<lenSaved ?? 0!, content: { index in // <2>
-//                    if savedRecordings[index].contains(title) {
-//                        songRecordings.append(savedRecordings[index])
-//                    }
-//                })
-                recordings=savedRecordings!
-                isFirst = false
+            if savedRecordings != nil {
+                var songRecordings = [String]()
+                for recording in savedRecordings! {
+                    if recording.contains(title) {
+                        songRecordings.append(recording)
+                    }
+                }
+                if songRecordings.count > 0 {
+                    recordings=songRecordings
+                    isFirst = false
+                }
+
             }
         }
     }
@@ -210,7 +213,7 @@ struct RecordWidget: View {
     //STEP 3 (part of creating temp file)
     func setup() {
         audioDocument = docDir
-        audioDocument?.appendPathComponent("recording1.caf")
+        audioDocument?.appendPathComponent(title + "recording1.caf")
 
         let audioSession = AVAudioSession.sharedInstance()
         

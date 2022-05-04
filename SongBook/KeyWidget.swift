@@ -34,8 +34,10 @@ struct KeyWidget: View {
                     // chord selecter
                     Picker("Key", selection: $selectedKey, content: {
                                     ForEach(0..<keyNames.count, content: { index in // <2>
-                                        Text(keyNames[index]) // <3>
-                                    })
+                                        Text(keyNames[index])
+                                            .foregroundColor(Color("AccentColor"))
+                                        
+                                    }).foregroundColor(Color.red)
                     }).onChange(of: selectedKey) { _ in
                         print("Key selected " + (keyNames[selectedKey]))
                         var newKeyString = ""
@@ -48,7 +50,6 @@ struct KeyWidget: View {
                     }
                     // chord
                     Text("    I                  II                  III                  IV                  V                  VI                  VII ")
-                        .font(.subheadline)
                         .multilineTextAlignment(.center)
                         
                     HStack {
@@ -65,13 +66,15 @@ struct KeyWidget: View {
                     HStack {
                         Picker("Chord Progression", selection: $selectedProg, content: {
                                         ForEach(0..<chordProgs.count, content: { index in // <2>
-                                            Text(chordProgs[index]) // <3>
+                                            Text(chordProgs[index])
+                                                .foregroundColor(Color("AccentColor"))// <3>
                                         })
                         }).onChange(of: selectedProg) { _ in
                             let prog = getNewProg()
                             keyProg = prog
                         }
                         Text(keyProg)
+                            .foregroundColor(Color("AccentColor"))// <3>
                     }
 
                     Spacer()
